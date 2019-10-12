@@ -1,0 +1,44 @@
+<table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">ลำดับ</th>
+            <th scope="col">ชื่ออาหาร</th>
+            <th scope="col">ประเภท</th>
+            <th scope="col">จำนวน</th>
+            <th scope="col">ราคา</th>
+            <th scope="col">สถานะ</th>
+            <th scope="col">วันที่</th>
+            <th scope="col"></th>
+            <th scope="col">ลบ</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let items of item ; let i = index" >
+          <tr >
+            <th scope="row">{{i+1}}</th>
+            <td>{{items.foodname}}</td>
+            <td>{{items.foodtype}}</td>
+            <td>{{items.amount}}</td>
+            <td>{{items.sum}}</td>
+            <td>{{items.status}}</td>
+            <td>{{items.day}}</td>
+            <td> <button type="button" class="btn btn-outline-success" (click)="onclick(items)">ส่งเข้าครัว</button></td>
+            
+            <td ><button type="button" *ngIf="items.foodinchef" class="btn btn-danger"  (click) ="click(items)">ลบ</button>
+              
+            </td>
+          </tr>
+          
+        </tbody>
+        <thead class="">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">รวม</th>
+            <th scope="col">{{this.sum}}</th>
+            <th scope="col"> </th>
+          </tr>
+        </thead> 
+        <button type="button" class="btn btn-outline-warning" (click)="total()">เช็คบิล</button>
+      </table>
+    

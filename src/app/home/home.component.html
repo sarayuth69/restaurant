@@ -1,0 +1,47 @@
+<h1>{{names.name}} {{names.lastname}} </h1>
+<img src="assets/imags/logo.png" width="200px">
+
+<h1>tell-0872605597 </h1>
+
+<div class="container px-lg-5">
+    <div class="row mx-lg-n5">
+        <div class="col py-3 px-lg-5 border bg-light">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <p>เมนูแนะนำ</p>
+                    <img src="assets/imags/menu13.jpg" width="200px">
+                    <p>ผัดไทย</p>
+                </div>
+               
+            </div>
+        </div>
+        <div class="col py-3 px-lg-5 border bg-light">
+            <div class="container">
+                <div class="row">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <div class="col" *ngFor="let table of table">
+                        <div class="card-deck">
+                            <div class="card">
+                                <button type="button" class="btn btn-outline-success"
+                                    (click)="onclick(table)">{{table.name}}</button>
+
+                                <div class="card-footer">
+                                  
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </div>

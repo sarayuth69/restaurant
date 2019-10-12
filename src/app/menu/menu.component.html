@@ -1,0 +1,24 @@
+<div class="card">
+        <div class="card-header">
+                <button size="small" class="btn btn-primary" (click)="showmenu()" > รายการ </button>  
+                <button size="small" class="btn btn-danger float-sm-right" (click)="insert()" > เพิ่มอาหาร </button> 
+        </div>
+        <div class="card-body" >
+                <div class="row" >
+                        <div class="col-4"  *ngFor="let item of food; let i = index">
+                          <div class="card" >
+                            <div class="card-body" align ="center">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/foodyummy-f8d93.appspot.com/o/Imgfood%2F{{item.foodimg}}?alt=media&token=81e0498d-69e7-4548-89b4-1c9401ca721f" class="card-img-top" width="100px">
+                                            {{ item.foodname }}
+                                         {{ item.foodprice }} &nbsp; บาท
+                                         <br />
+                                         <button size="small" class="btn btn-primary" (click)="onClick(item)"> เพิ่ม </button>    
+                                         <button size="small" class="btn btn-danger" (click)="delets(item)"> ลบ </button>  
+                                         <button size="small" class="btn btn-warning" (click)="editfood(item.foodID,item.foodname,item.foodtype,
+                                         item.foodprice)"> แก้ไข </button> 
+                            </div>
+                            
+                          </div>
+                        </div>
+        </div>
+      </div>

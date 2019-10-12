@@ -1,0 +1,50 @@
+<div class="card">
+        <div class="card-header">
+                แก้ไขเมนู
+        </div>
+        <div class="card-body">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">IDอาหาร</span>  
+            </div>
+            <input type="text" class="form-control"  [formControl]="foodID" >
+          </div>
+        </div>
+        
+        <div class="card-body">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">ชื่ออาหาร</span>  
+            </div>
+            <input type="text" class="form-control" placeholder="ชื่ออาหาร" aria-label="ชื่ออาหาร" [formControl]="foodname" >
+          </div>
+        </div>
+    
+        <div class="card-body">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">ประเภท</span>
+            </div>
+            <input type="text" class="form-control" placeholder="ประเภท" aria-label="ประเภท" [formControl]="foodtype">
+          </div>
+        </div>
+        
+        <div class="card-body">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">ราคา</span>
+            </div>
+            <input type="text" class="form-control" placeholder="ราคา" aria-label="ราคา" [formControl]="foodprice">
+          </div>
+          </div>
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Example file input</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1" >
+            </div>
+          </form>
+      </div>
+    
+    
+      <button type="button" class="btn btn-outline-success" (click) = "edit(item.foodID,item.foodname
+      ,item.foodtype,item.foodprice)" >Success</button>
