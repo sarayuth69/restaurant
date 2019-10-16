@@ -15,7 +15,6 @@ import {
 export class EditComponent implements OnInit {
 
 
-
   foodID = new FormControl('');
   foodname = new FormControl('');
   foodprice = new FormControl('');
