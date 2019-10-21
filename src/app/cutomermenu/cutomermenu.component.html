@@ -1,7 +1,9 @@
 <div class="card">
         <div class="card-header">
                 <button size="small" class="btn btn-primary" (click)="showmenu()" > รายการ </button>  
+             <h1>{{table.name}}</h1> 
         </div>
+     
         <div class="card-body" >
                 <div class="row" >
                         <div class="col-4"  *ngFor="let item of food; let i = index">
