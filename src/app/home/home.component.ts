@@ -9,7 +9,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class HomeComponent implements OnInit {
   foods;
-  names
+  names;
   table = [
     {name: 'TABLE_1'},
     {name: 'TABLE_2'},
@@ -22,16 +22,17 @@ export class HomeComponent implements OnInit {
     {name: 'TABLE_9'}
   ];
   constructor(
-    public router: Router, 
-    public database: AngularFireDatabase, 
-     private route: ActivatedRoute
+    public router: Router,
+    public database: AngularFireDatabase,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    
     this.database.list('/tablemenu/'),  ref => ref.orderByChild('').limitToLast(3).valueChanges().subscribe( data => {
       this.foods = data.reverse();
   });
-  this.route.params.subscribe(
+    this.route.params.subscribe(
     (param: any) => {
       this.names = param;
       console.log(this.names);
@@ -43,6 +44,17 @@ export class HomeComponent implements OnInit {
    this.router.navigate([ '/cutomermenu' , table ]);
 
  }
+ click ( u: string, p: string) {
+  if (u === 'addmin' && p === 'addmin') {
+    this.router.navigate(['/menu' ]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 800);
+  }
+  else if (u!='addmin' && p!='addmin'){
+    alert("กรุณากรอกรหัสผ่านให้ถูกต้อง");
+  }
+}
 
 
 }

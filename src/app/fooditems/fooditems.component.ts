@@ -91,7 +91,9 @@ export class FooditemsComponent implements OnInit {
           'success'
         );
         firebase.database().ref(`cart/${this.table.name}`).remove();
-
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
       }
 
     });
